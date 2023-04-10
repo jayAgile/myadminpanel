@@ -1,0 +1,160 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	@include prefix(box-sizing, border-box);
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	@include prefix(text-size-adjust, none);
+}
+
+body {
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: $color1;
+	font-family: $font_raleway;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	&:hover,
+	&:focus {
+		@extend a;
+	}
+}
+button {
+	outline: 0;
+
+	&:hover,
+	&:focus {
+		@extend button;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+b {
+	margin: 0;
+	font-weight: normal;
+	line-height: normal;
+	letter-spacing: 1px;
+}
+.text-white {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	strong,
+	b,
+	p,
+	ul,
+	ol,
+	li {
+		color: $white;
+	}
+}
+.text-gray {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	strong,
+	b,
+	p,
+	ul,
+	ol,
+	li,
+	.timer {
+		color: $color1;
+	}
+}
+p {
+	margin: 0;
+	line-height: normal;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+svg {
+	fill: currentColor;
+	max-width: 100%;
+	vertical-align: middle;
+}
+div,
+aside,
+figure,
+figcaption,
+label {
+	margin: 0;
+}
+section,
+header,
+footer {
+	display: inline-block;
+	width: 100%;
+}
+%transition {
+	@include prefix(transition, all 0.3s ease-in-out);
+}
+
+::-moz-selection {
+	background: #389dab;
+	color: $white;
+}
+::selection {
+	background: #389dab;
+	color: $white;
+}
+
+.paddingBadge {
+	margin-top: 30px;
+}
+
+.cardPadding {
+	margin: 15px 0;
+}
+
+.select__control {
+	border: none !important;
+	border-radius: 7px !important;
+}
+.select__control--is-focused {
+	box-shadow: none !important;
+}
+// ::-webkit-input-placeholder {color: $color2;opacity: 1;}
+// :-moz-placeholder { color: $color2;opacity: 1;}
+// ::-moz-placeholder { color: $color2;opacity: 1;}
+// :-ms-input-placeholder {color: $color2;opacity: 1;}
+
+@media (max-width: 1199px) {
+	body {
+		background-size: cover;
+		//height: 100vh;
+	}
+	// .body-section{
+	//     height: calc(100vh - 130px);
+	// }
+}

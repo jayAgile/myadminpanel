@@ -1,0 +1,34 @@
+@import "../scss/constant.module.scss";
+@import "../scss/color.module.scss";
+
+.bg-primary {
+  background: $primary;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paddingX {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.paddingY {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.bottomPadding {
+  padding-bottom: 2rem;
+}
+
+.bg-secondary {
+  background: $secondary;
+}
+
+.react-icons {
+  vertical-align: middle;
+}

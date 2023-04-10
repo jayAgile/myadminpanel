@@ -1,0 +1,42 @@
+@import "../../../scss/constant.module.scss";
+@import "../../../scss/color.module.scss";
+
+.wrapper {
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  // width: 12%;
+  .container {
+    flex-direction: column;
+    width: 13rem;
+    display: flex;
+    height: 90%;
+    justify-content: space-between;
+    .upperElements {
+      .circleAvatar {
+        display: flex;
+        justify-content: center;
+        img {
+          height: 5rem;
+          width: 5rem;
+          border-radius: 100%;
+          background-color: white;
+        }
+      }
+    }
+  }
+  .list {
+    display: block;
+    color: inherit;
+    color: white;
+    padding: 0.8rem;
+    text-decoration: none;
+    > :nth-child(1) {
+      position: relative;
+      bottom: -0.2rem;
+      text-align: center;
+      margin-left: 1rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
