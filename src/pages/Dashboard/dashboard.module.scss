@@ -1,6 +1,20 @@
 @import "../../scss/constant.module.scss";
 @import "../../scss/color.module.scss";
 
-.dashboard {
-  // background-color: red;
+@mixin commonCardStyle() {
+  height: 140px;
+  width: 170px;
+  margin-right: 15px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  .leftElements {
+    width: 100%;
+  }
+  .rightElements {
+    margin-left: 2rem;
+  }
 }

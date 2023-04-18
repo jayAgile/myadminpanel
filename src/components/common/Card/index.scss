@@ -1,0 +1,22 @@
+@import "../../../scss/constant.module.scss";
+@import "../../../scss/color.module.scss";
+
+.cardBtnStyle {
+  background-color: transparent;
+  border: none;
+  background-color: #ffff;
+  border: 1px solid rgb(252, 246, 246);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.cardBtnStyle:disabled,
+.cardBtnStyle:active {
+  opacity: 1;
+}
+.line {
+  border: 1px solid #d2dff4;
+  border-width: thin;
+  width: 5rem;
+  align-self: center;
+}

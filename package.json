@@ -10,6 +10,7 @@
     "axios": "^0.27.2",
     "env-cmd": "^10.1.0",
     "eslint-plugin-react": "^7.31.8",
+    "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.0",

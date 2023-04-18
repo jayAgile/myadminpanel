@@ -1,0 +1,206 @@
+@import "../../../scss/constant.module.scss";
+@import "../../../scss/color.module.scss";
+@import "../../../pages/Dashboard/dashboard.module.scss";
+
+// Categories
+@mixin categoriesStyles($color, $image-path) {
+  background-color: $color;
+  height: 150px;
+  width: 170px;
+  margin-right: 15px;
+  border: none;
+
+  //image
+  @include imageStyle($image-path, true, $color);
+  //star
+  .starBtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+  }
+  .starBtn:active {
+    opacity: 0.8;
+  }
+  .starBtn:hover {
+    cursor: pointer;
+  }
+  .star {
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+  }
+  //Text
+  > * {
+    color: white;
+    text-align: start;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  > :nth-child(3) {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+}
+
+// image styles
+@mixin imageStyle($image-path, $setImage, $color: black) {
+  //Images
+  .img-container {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20%;
+    border-radius: 100%;
+    .imagesBg {
+      @include imageUrl($image-path, $set-image: $setImage, $color: $color);
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .img-container:active {
+    opacity: 0.8;
+  }
+  .img-container:hover {
+    cursor: pointer;
+  }
+}
+
+// files styles
+@mixin filesStyles($color: white) {
+  background-color: $color;
+  @include commonCardStyle();
+  align-items: flex-start;
+  justify-content: space-evenly;
+  @include imageStyle("", false);
+  //images obj-key value
+  @each $name, $value in $icons-svg {
+    .imagesBg-#{$name} {
+      background-size: contain;
+      width: 25px;
+      height: 25px;
+      fill: $value;
+    }
+  }
+  .img-container {
+    margin-bottom: 2%;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    justify-content: flex-start;
+  }
+  //Text
+  > * {
+    text-align: start;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  > :nth-child(3) {
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+}
+
+@mixin recentFileImages($image, $color) {
+  background-color: $color;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 20px 0px 0px;
+  .recent-imgStyle {
+    @include imageUrl($image, $set-image: true, $color: white);
+    background-size: contain;
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin-right: 5%;
+    &:active {
+      opacity: 0.5;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// main container
+.wrapper {
+  .categories {
+    margin-top: 2%;
+    // card containers
+    @each $name, $value in $color-cards {
+      .card#{$name} {
+        @include categoriesStyles($value, $img-camera);
+      }
+    }
+  }
+
+  .files {
+    // card containers
+    .cardfiles {
+      @include filesStyles(white);
+    }
+  }
+
+  .recentFiles {
+    .recent-files {
+      .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+
+        @each $name, $value in $color-cards {
+          .img-#{$name} {
+            // @include recentFileImages($img-video, $value);
+            // @each $img, $img-value in $imagesArray {
+            @include recentFileImages($img-camera, $value);
+            // }
+          }
+        }
+      }
+      .recent-share {
+        @include imageUrl($img-share, $set-image: true, $color: $audio);
+        background-size: contain;
+        border: none;
+        width: 25px;
+        height: 25px;
+        margin-right: 5%;
+        &:active {
+          opacity: 0.5;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .recent-more {
+        @include imageUrl($img-more, $set-image: true, $color: $audio);
+        background-size: contain;
+        border: none;
+        width: 25px;
+        height: 25px;
+        margin-right: 5%;
+        &:active {
+          opacity: 0.5;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

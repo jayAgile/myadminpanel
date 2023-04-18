@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main style={{ marginLeft: "220px" }}>
+      <main className="paddings" style={{ marginLeft: "320px" }}>
         <Outlet />
       </main>
     </>

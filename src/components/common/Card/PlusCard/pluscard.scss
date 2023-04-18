@@ -1,0 +1,27 @@
+@import "../../../../scss/constant.module.scss";
+@import "../../../../scss/color.module.scss";
+@import "../../../../pages/Dashboard/dashboard.module.scss";
+
+.plus-files {
+  @include commonCardStyle();
+  align-items: center;
+  background-color: $search;
+  border-color: $search;
+  justify-content: center;
+  margin-bottom: 0px;
+  padding: 0;
+  .plus-imgStyle {
+    @include imageUrl($plus-img, $set-image: true, $color: $audio);
+    background-size: contain;
+    margin: 0;
+    border: none;
+    width: 22px;
+    height: 22px;
+    &:active {
+      opacity: 0.5;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

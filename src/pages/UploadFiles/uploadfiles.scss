@@ -1,0 +1,12 @@
+@import "../../scss/constant.module.scss";
+@import "../../scss/color.module.scss";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cardContainer {
+    .innerCard {
+    }
+  }
+}

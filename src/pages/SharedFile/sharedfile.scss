@@ -1,0 +1,189 @@
+@import "../../pages/Dashboard/dashboard.module.scss";
+@import "../../scss/constant.module.scss";
+
+@mixin lineStyle($colors) {
+  border: 1px solid $colors;
+  width: 50%;
+}
+@mixin recentFileImages($image, $color) {
+  background-color: $color;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 20px 0px 0px;
+  .shared-imgStyle {
+    @include imageUrl($image, $set-image: true, $color: white);
+    background-size: contain;
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin-right: 5%;
+    &:active {
+      opacity: 0.5;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.wrapper {
+  .sharedFiles {
+    .userCards {
+      @include commonCardStyle();
+      padding-top: 0;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      margin-bottom: 0px;
+      .img-container1 {
+        margin-bottom: 2%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        justify-content: flex-start;
+        > * {
+          height: 2rem;
+          position: relative;
+          left: -5px;
+          margin: 0;
+          width: 2rem;
+        }
+      }
+      .img-container2 {
+        margin-bottom: 2%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        justify-content: flex-start;
+        > * {
+          height: 2rem;
+          position: relative;
+          left: -25px;
+          margin: 0;
+          width: 2rem;
+        }
+      }
+      .img-container3 {
+        margin-bottom: 2%;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+        justify-content: flex-start;
+        > * {
+          height: 2rem;
+          position: relative;
+          left: -40px;
+          margin: 0;
+          width: 2rem;
+        }
+      }
+      @each $name, $value in $icons-svg {
+        .line-#{$name} {
+          @include lineStyle($value);
+        }
+      }
+
+      h4 {
+        margin: 0;
+        font-weight: 600;
+        color: black;
+        font-size: medium;
+      }
+    }
+  }
+
+  .recent-shared {
+    .shared-card {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    span {
+      font-weight: 500;
+      color: black;
+      font-size: 15px;
+    }
+    @each $name, $value in $color-cards {
+      .img-#{$name} {
+        @include recentFileImages($img-camera, $value);
+      }
+    }
+
+    .shared-share {
+      @include imageUrl($img-share, $set-image: true, $color: $audio);
+      background-size: contain;
+      border: none;
+      width: 25px;
+      height: 25px;
+      margin-right: 5%;
+      &:active {
+        opacity: 0.5;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .shared-more {
+      @include imageUrl($img-more, $set-image: true, $color: $audio);
+      background-size: contain;
+      border: none;
+      width: 25px;
+      height: 25px;
+      margin-right: 5%;
+      &:active {
+        opacity: 0.5;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .img-container1 {
+      margin-bottom: 2%;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+      justify-content: flex-start;
+      > * {
+        height: 2rem;
+        position: relative;
+        left: -5px;
+        margin: 0;
+        width: 2rem;
+      }
+    }
+    .img-container2 {
+      margin-bottom: 2%;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+      justify-content: flex-start;
+      > * {
+        height: 2rem;
+        position: relative;
+        left: -25px;
+        margin: 0;
+        width: 2rem;
+      }
+    }
+    .img-container3 {
+      margin-bottom: 2%;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      border-radius: 0;
+      justify-content: flex-start;
+      > * {
+        height: 2rem;
+        position: relative;
+        left: -40px;
+        margin: 0;
+        width: 2rem;
+      }
+    }
+  }
+}

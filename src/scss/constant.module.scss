@@ -1,12 +1,58 @@
+@import "../scss/color.module.scss";
+$imageUrl: "../../public/Images/";
+
+//set path of the image
 @function toAbsoluteUrl($pathname) {
   $image: url($imageUrl + $pathname);
   @return $image;
 }
+
+//set image
+@mixin imageUrl($pathName, $set-image: true, $color: black) {
+  @if $set-image {
+    -webkit-mask: toAbsoluteUrl($pathName);
+    background-color: $color;
+    -webkit-mask-size: 20px;
+  } @else {
+    -webkit-mask: none;
+  }
+  -webkit-mask-repeat: no-repeat;
+}
+
+$img-video: "video.png";
+$img-camera: "camera.png";
+$img-documents: "documents.png";
+$img-audio: "audio.png";
+$img-share: "share.png";
+$img-more: "menu.png";
+
+$imagesArray: (
+  $img-video: "video.png",
+  $img-camera: "camera.png",
+  $img-documents: "documents.png",
+  $img-audio: "audio.png",
+);
+$img-share: "share.png";
+$img-more: "menu.png";
+
+$plus-img: "plus.png";
+
+$icons-svg: (
+  "Work": $picture,
+  "Personal": $document,
+  "School": $video,
+  "Archive": $audio,
+);
+
+$color-cards: (
+  "Pictures": $picture,
+  "Documents": $document,
+  "Videos": $video,
+  "Audio": $audio,
+);
 $sm: 640px;
 $md: 768px;
 $lg: 1024px;
 $xl: 1280px;
 $xxl: 1536px;
-$imageUrl: "../../public/images/";
-$splash: toAbsoluteUrl("splash.png");
 $font-stack: Georgia, serif;

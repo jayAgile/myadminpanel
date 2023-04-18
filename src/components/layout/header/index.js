@@ -3,17 +3,31 @@ import css from "./header.module.scss";
 import { Link } from "react-router-dom";
 import { SidebarList, sidebarList } from "../../../constants/data";
 import { toAbsoluteUrl } from "../../../utils";
+import { CircleAvatar } from "../../common/CircleAvatar";
 
 const Header = () => {
   const [selectedRoute, setSelectedRoute] = useState();
 
+  const sideBarHandler = (id) => {
+    switch (id) {
+      case "mycloud":
+        return "/";
+      case "sharefile":
+        return "/shared-files";
+      case "favourite":
+        return "/favorites";
+      case "uploadfile":
+        return "/upload-file";
+      default:
+        return "/";
+    }
+  };
+
   return (
-    <section className={`paddingY bg-secondary ${css.wrapper}`}>
+    <section className={` bg-secondary ${css.wrapper}`}>
       <div className={css.container}>
         <div className={`${css.upperElements}`}>
-          <div className={`bottomPadding ${css.circleAvatar}`}>
-            <img src={toAbsoluteUrl("images/person.png")} />
-          </div>
+          <CircleAvatar img="person.png" />
 
           {SidebarList.upperList.map((obj) => {
             return (
@@ -31,6 +45,7 @@ const Header = () => {
                 <Link
                   className={css.list}
                   onClick={() => setSelectedRoute(obj.id)}
+                  to={sideBarHandler(obj.id)}
                 >
                   <span>{obj.icon}</span>
                   <span>{obj.title}</span>
@@ -40,7 +55,7 @@ const Header = () => {
           })}
         </div>
 
-        <div className={`${css.lowerElements}`}>
+        <div className={`bottomPadding ${css.lowerElements}`}>
           {SidebarList.lowerList.map((obj) => {
             return (
               <div
@@ -56,7 +71,10 @@ const Header = () => {
               >
                 <Link
                   className={css.list}
-                  onClick={() => setSelectedRoute(obj.id)}
+                  onClick={() => {
+                    setSelectedRoute(obj.id);
+                  }}
+                  to={sideBarHandler(obj.id)}
                 >
                   <span>{obj.icon}</span>
                   <span>{obj.title}</span>
