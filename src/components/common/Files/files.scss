@@ -116,15 +116,15 @@
 
 @mixin recentFileImages($image, $color) {
   background-color: $color;
-  padding: 10px;
+  padding: 12px;
   border-radius: 10px;
   margin: 0px 20px 0px 0px;
+  border: none;
   .recent-imgStyle {
     @include imageUrl($image, $set-image: true, $color: white);
     background-size: contain;
-    border: none;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     margin-right: 5%;
     &:active {
       opacity: 0.5;
@@ -200,6 +200,10 @@
         &:hover {
           cursor: pointer;
         }
+      }
+      span {
+        color: black;
+        margin: 10px 0px 0px 0px;
       }
     }
   }

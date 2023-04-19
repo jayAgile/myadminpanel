@@ -1,12 +1,100 @@
 @import "../../scss/constant.module.scss";
 @import "../../scss/color.module.scss";
 
-.wrapper {
+@mixin recentFileImages($image, $color) {
+  background-color: $color;
+  padding: 12px;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  .cardContainer {
-    .innerCard {
+  align-items: center;
+  margin: 0px 20px 0px 0px;
+  border: none;
+  .recent-imgStyle {
+    @include imageUrl($image, $set-image: true, $color: white);
+    width: 20px;
+    height: 20px;
+    margin-right: 5%;
+    &:active {
+      opacity: 0.5;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.uploadwrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  .mainContainer {
+    height: 80vh;
+    width: 50%;
+    .cardContainer {
+      height: 80vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .title {
+        padding-bottom: 25px;
+        font-size: 2.5rem;
+        color: rgb(6, 54, 122);
+        margin: 0;
+      }
+      .innerCard {
+        height: 100vh;
+        width: 100%;
+        background-color: $search;
+        .image-cloud {
+          height: 72px;
+          width: 72px;
+          fill: rgb(38, 111, 213);
+        }
+        .chooseBtn {
+          width: 300px;
+          height: 40px;
+          box-sizing: border-box;
+          background-color: transparent;
+          border: 1px solid $audio;
+          border-radius: 10px;
+          color: $audio;
+          &:active {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    .downloadContainer {
+      margin-top: 2%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .innerCard-container {
+        background-color: $search;
+        width: 100%;
+        flex-direction: row;
+        margin: 10px;
+        @each $name, $value in $color-cards {
+          .img-#{$name} {
+            // @include recentFileImages($img-video, $value);
+            // @each $img, $img-value in $imagesArray {
+            @include recentFileImages($img-camera, $value);
+            // }
+          }
+        }
+        .size {
+          font-weight: 100;
+          color: rgb(146, 146, 146);
+        }
+        .icons {
+          height: 30px;
+          width: 30px;
+        }
+      }
     }
   }
 }

@@ -246,3 +246,20 @@ export const gallary = [
     subtitle: "July 01,2022",
   },
 ];
+
+export const downloading = [
+  {
+    id: 1,
+    title: "Summer-vibes.mp3",
+    icon: svgIcon.close,
+    size: "500 kb",
+    colors: "Documents",
+  },
+  {
+    id: 2,
+    title: "Summer-vibes.mp3",
+    icon: svgIcon.correct,
+    size: "500 kb",
+    colors: "Audio",
+  },
+];

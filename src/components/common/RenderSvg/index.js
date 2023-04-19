@@ -10,7 +10,7 @@ export const RenderSvg = ({ className, imgString }) => {
         opacity: 1,
       }}
       className={className}
-      viewBox="0 0 512 512"
+      viewBox="0 0 640 512"
     >
       <path d={imgString}></path>
     </svg>

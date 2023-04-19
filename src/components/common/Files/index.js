@@ -86,10 +86,10 @@ export const Files = () => {
                 alignItems: "center",
               }}
             >
-              <div className={`img-${obj.colors}`}>
-                <button className="recent-imgStyle" />
-              </div>
-              <div>{obj.title}</div>
+              <button className={`img-${obj.colors}`}>
+                <div className="recent-imgStyle" />
+              </button>
+              <span>{obj.title}</span>
             </div>
             <span>{obj.subtitle}</span>
             <span>{obj.size}</span>

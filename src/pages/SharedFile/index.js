@@ -56,9 +56,9 @@ export const SharedFile = () => {
                 alignItems: "center",
               }}
             >
-              <div className={`img-${obj.colors}`}>
-                <button className="shared-imgStyle" />
-              </div>
+              <button className={`img-${obj.colors}`}>
+                <div className="shared-imgStyle" />
+              </button>
               <span>{obj.title}</span>
             </div>
             <div style={{ display: "flex", flexDirection: "row" }}>
