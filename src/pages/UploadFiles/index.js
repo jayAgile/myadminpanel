@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "../../components/common/Card";
 import "./uploadfiles.scss";
 import { RenderSvg } from "../../components/common/RenderSvg";
@@ -7,6 +7,8 @@ import { downloading } from "../../constants/data";
 import ProgressBar from "../../components/common/ProgressBar";
 
 export const UploadFiles = () => {
+  const [progress, setProgress] = useState("63");
+
   return (
     <div className="uploadwrapper">
       <div className="mainContainer">
@@ -47,9 +49,26 @@ export const UploadFiles = () => {
                       width: "90%",
                     }}
                   >
-                    <span>{obj.title}</span>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        width: "90%",
+                      }}
+                    >
+                      <span>{obj.title}</span>
+                      {obj.id == "1" && <span>{progress}%</span>}
+                    </div>
                     {obj.id == "1" ? (
-                      <ProgressBar bgcolor="orange" progress="60" height={5} />
+                      <>
+                        <ProgressBar
+                          bgcolor="skyblue"
+                          progress={progress}
+                          height={5}
+                        />
+                        {/* <span>63%</span> */}
+                      </>
                     ) : (
                       <span
                         style={{ margin: "5px 0px 0px 0px" }}

@@ -24,11 +24,12 @@ const Progress_bar = ({ bgcolor, progress, height }) => {
   };
 
   return (
-    <div style={Parentdiv}>
-      <div style={Childdiv}>
-        {/* <span style={progresstext}>{`${progress}%`}</span> */}
+    <>
+      {/* <span style={{ alignSelf: "flex-end", margin:"0px 0px 10px 0px" }}>{`${progress}%`}</span> */}
+      <div style={Parentdiv}>
+        <div style={Childdiv}></div>
       </div>
-    </div>
+    </>
   );
 };
 
