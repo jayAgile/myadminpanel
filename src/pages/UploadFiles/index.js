@@ -63,7 +63,7 @@ export const UploadFiles = () => {
                     {obj.id == "1" ? (
                       <>
                         <ProgressBar
-                          bgcolor="skyblue"
+                          bgcolor="#266fd5"
                           progress={progress}
                           height={5}
                         />

@@ -1,0 +1,91 @@
+@import "../../.././scss/constant.module.scss";
+@import "../../.././scss/color.module.scss";
+
+@mixin thirdCard($color) {
+  width: 100%;
+  margin-bottom: 10px;
+
+  background-color: $color;
+  .size {
+    font-weight: 100;
+    color: rgb(146, 146, 146);
+  }
+  .icons {
+    height: 30px;
+    width: 30px;
+  }
+  .yourStorage {
+    font-size: 18px;
+    // padding-bottom: 10px;
+    .avatar1 {
+      padding: 0;
+      img {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+    .avatar2 {
+      padding: 0;
+      img {
+        position: relative;
+        right: 10px;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+  }
+}
+
+.firstCard {
+  width: 100%;
+  height: 50%;
+  background-color: $search;
+  .image-cloud {
+    height: 72px;
+    width: 72px;
+    fill: rgb(38, 111, 213);
+  }
+}
+.secondCard {
+  background-color: $search;
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  .size {
+    font-weight: 100;
+    color: rgb(146, 146, 146);
+  }
+  .icons {
+    height: 30px;
+    width: 30px;
+  }
+  .yourStorage {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+}
+
+.thirdCard {
+  background-color: $search;
+  width: 100%;
+  .title {
+    text-align: start;
+  }
+  @each $name, $val in $colors {
+    .innerThirdCard-#{$name} {
+      @include thirdCard($val);
+    }
+  }
+}
+
+.chooseBtn {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid $audio;
+  border-radius: 10px;
+  color: $audio;
+  &:active {
+    opacity: 0.5;
+  }
+}

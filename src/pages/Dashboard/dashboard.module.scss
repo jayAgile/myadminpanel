@@ -11,10 +11,11 @@
 }
 
 .wrapper {
+  display: flex;
   .leftElements {
     width: 100%;
   }
   .rightElements {
-    margin-left: 2rem;
+    width: 40%;
   }
 }

@@ -263,3 +263,30 @@ export const downloading = [
     colors: "Audio",
   },
 ];
+
+export const folders = [
+  {
+    id: 1,
+    title: "keynote files",
+    img: {
+      user1: "person.png",
+      user2: "stevejobs.png",
+    },
+  },
+  {
+    id: 2,
+    title: "Vacation photos",
+    img: {
+      user2: "Elon_musk.jpeg",
+      user1: "person.png",
+    },
+  },
+  {
+    id: 3,
+    title: "Project Report",
+    img: {
+      user1: "Elon_musk.jpeg",
+      user2: "person.png",
+    },
+  },
+];

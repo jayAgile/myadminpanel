@@ -6,13 +6,13 @@ import { AddFiles } from "../../components/common/AddFiles";
 
 const Dashboard = () => {
   return (
-    <div className={`  ${css.wrapper}`}>
+    <div className={`${css.wrapper}`}>
       <div className={css.leftElements}>
         <Files />
       </div>
-      {/* <div className={css.rightElements}>
+      <div className={css.rightElements}>
         <AddFiles />
-      </div> */}
+      </div>
     </div>
   );
 };
