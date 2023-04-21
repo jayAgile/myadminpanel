@@ -7,7 +7,7 @@
   background-color: $color;
   height: 150px;
   width: 170px;
-  margin-right: 15px;
+  // margin-right: 15px;
   border: none;
 
   //image
@@ -137,12 +137,22 @@
 
 // main container
 .wrapper {
-  width: 90%;
+  width: 100%;
+  // .menuIcon {
+  //   display: none;
+  //   @include responsive($media: xxl) {
+  //     display: flex;
+  //     margin: 0px 20px 0px 0px;
+  //   }
+  // }
   .categories {
     margin-top: 2%;
     // card containers
     @each $name, $value in $color-cards {
       .card#{$name} {
+        @include responsive($media: xl) {
+          margin-top: 2%;
+        }
         @include categoriesStyles($value, $img-camera);
       }
     }
@@ -151,6 +161,9 @@
   .files {
     // card containers
     .cardfiles {
+      @include responsive($media: xl) {
+        margin-top: 2%;
+      }
       @include filesStyles(white);
     }
   }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./files.scss";
 import { RenderInput } from "../FormField";
 import { Card } from "../Card";
@@ -6,11 +6,21 @@ import { categories, files, recentFilesArr } from "../../../constants/data";
 import { toAbsoluteUrl } from "../../../utils";
 import { RenderSvg } from "../RenderSvg";
 import { AddCardBtn } from "../Card/PlusCard";
+import { BiMenu } from "react-icons/bi";
 
 export const Files = () => {
+  const [sideMenuOpen, setSideMenuOpen] = useState("show");
+
   const Categories = () => {
     return (
-      <div style={{ display: "flex" }}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          width: "100%",
+          gap: "2rem",
+        }}
+      >
         {categories.map((obj) => {
           return (
             <Card
@@ -49,7 +59,7 @@ export const Files = () => {
 
   const Files = () => {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
         {files.map((obj) => {
           return (
             <>
@@ -103,10 +113,15 @@ export const Files = () => {
 
   return (
     <div className={`wrapper`}>
-      <div>
-        <RenderInput title="Search" placeholder="Search" />
+      {/* medium and small screen */}
+      <div style={{ display: "flex", width: "100%", alignItems: "center" }}>
+        {/* <div className={`menuIcon`} onClick={() => setSideMenuOpen("close")}>
+          <BiMenu size={30} />
+        </div> */}
+        <div style={{ display: "flex", width: "100%" }}>
+          <RenderInput title="Search" placeholder="Search" />
+        </div>
       </div>
-
       {/* category */}
       <div className={`categories`}>
         <h2>Categories</h2>

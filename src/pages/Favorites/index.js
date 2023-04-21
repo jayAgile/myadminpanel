@@ -9,7 +9,7 @@ import { toAbsoluteUrl } from "../../utils";
 export const Favorites = () => {
   const Favorite = () => {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
         {categories.map((obj) => {
           return obj.favorite == true ? (
             <Card
@@ -48,7 +48,7 @@ export const Favorites = () => {
 
   const Files = () => {
     return (
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="favFiles">
         {gallary.map((obj) => (
           <Card
             className="favoriteCards"
@@ -78,7 +78,7 @@ export const Favorites = () => {
 
       {/* files */}
       <div className={`newfiles`}>
-        <h2>Favorites</h2>
+        <h2>Files</h2>
         <Files />
       </div>
     </div>

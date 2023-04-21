@@ -10,7 +10,7 @@ import { CircleAvatar } from "../../components/common/CircleAvatar";
 export const SharedFile = () => {
   const SharedFiles = () => {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
         {yourFiles.map((obj) => {
           return (
             <>

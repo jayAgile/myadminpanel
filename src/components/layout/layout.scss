@@ -1,0 +1,11 @@
+@import "../../scss/constant.module.scss";
+@import "../../scss/color.module.scss";
+@import "../../scss/mixin.scss";
+
+.mainContainer {
+  // margin-left: 320px;
+  margin: 30px 30px 30px 320px;
+  @include responsive($media: xxl) {
+    margin: 30px 30px 30px 30px;
+  }
+}

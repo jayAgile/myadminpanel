@@ -10,6 +10,9 @@
   justify-content: center;
   margin-bottom: 0px;
   padding: 0;
+  @include responsive($media: xl) {
+    margin-top: 2%;
+  }
   .plus-imgStyle {
     @include imageUrl($plus-img, $set-image: true, $color: $audio);
     background-size: contain;

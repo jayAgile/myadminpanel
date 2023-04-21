@@ -15,6 +15,7 @@ export const AddFiles = () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
+        marginLeft: "5%",
       }}
     >
       <Card className="firstCard" disabled={false}>

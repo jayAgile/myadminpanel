@@ -1,5 +1,6 @@
 @import "../../scss/constant.module.scss";
 @import "../../scss/color.module.scss";
+@import "../../scss/mixin.scss";
 
 @mixin recentFileImages($image, $color) {
   background-color: $color;
@@ -26,11 +27,18 @@
 .uploadwrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  @include responsive($media: xxl) {
+    align-items: center;
+  }
   padding: 0;
   .mainContainer {
+    display: flex;
+    flex-direction: column;
     height: 80vh;
     width: 50%;
+    @include responsive($media: sm) {
+      width: 100%;
+    }
     .cardContainer {
       height: 80vh;
       width: 100%;
@@ -54,8 +62,9 @@
           fill: rgb(38, 111, 213);
         }
         .chooseBtn {
-          width: 300px;
+          width: 50%;
           height: 40px;
+          overflow: hidden;
           box-sizing: border-box;
           background-color: transparent;
           border: 1px solid $audio;

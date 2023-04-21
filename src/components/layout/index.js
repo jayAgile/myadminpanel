@@ -1,15 +1,17 @@
-import React, { lazy } from "react";
+import React, { lazy, useState } from "react";
 import { Outlet } from "react-router-dom";
-import css from "./layout.module.scss";
+import "./layout.scss";
+import { BiMenu } from "react-icons/bi";
 
 const Header = lazy(() => import("./header"));
 const Footer = lazy(() => import("./footer"));
 
 const Layout = () => {
+  const [showDrawer, setShowDrawer] = useState(false);
   return (
     <>
-      <Header />
-      <main className="paddings" style={{ marginLeft: "320px" }}>
+      <Header showDrawer={showDrawer} drawerHandler={setShowDrawer} />
+      <main className=" mainContainer">
         <Outlet />
       </main>
     </>

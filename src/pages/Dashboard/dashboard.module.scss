@@ -1,10 +1,11 @@
 @import "../../scss/constant.module.scss";
+@import "../../scss/mixin.scss";
 @import "../../scss/color.module.scss";
 
 @mixin commonCardStyle() {
   height: 140px;
   width: 170px;
-  margin-right: 15px;
+  // margin-right: 15px;
   padding-bottom: 0;
   display: flex;
   flex-direction: column;

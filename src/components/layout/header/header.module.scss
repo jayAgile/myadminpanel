@@ -1,31 +1,68 @@
 @import "../../../scss/constant.module.scss";
+@import "../../../scss/mixin.scss";
 @import "../../../scss/color.module.scss";
 
+.menuIcon {
+  display: none;
+  @include responsive($media: xxl) {
+    display: flex;
+    margin: 0px 0px 10px 30px;
+    padding-top: 20px;
+    align-items: center;
+  }
+}
 .wrapper {
   position: fixed;
   z-index: 100;
   height: 100%;
-  // width: 12%;
+  top: 0;
+  margin: 0px;
   .container {
     flex-direction: column;
     width: 18rem;
     display: flex;
     height: 100%;
     justify-content: space-between;
+    @include responsive($media: xxl) {
+      display: none;
+    }
   }
-  .list {
-    display: block;
-    color: inherit;
-    color: white;
-    font-size: 1.2rem;
-    padding: 0.8rem;
+  .containerChange {
+    flex-direction: column;
+    width: 18rem;
+    display: none;
+    height: 100%;
+    justify-content: space-between;
+    @include responsive($media: xxl) {
+      display: flex;
+      height: 100%;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 18rem;
+    }
+  }
+
+  .listContainer {
     text-decoration: none;
-    > :nth-child(1) {
-      position: relative;
-      bottom: -0.2rem;
-      text-align: center;
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
+    .list {
+      display: block;
+      color: inherit;
+      color: white;
+      font-size: 1.2rem;
+      padding: 0.8rem;
+      text-decoration: none;
+      > :nth-child(1) {
+        position: relative;
+        bottom: -0.2rem;
+        text-align: center;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+      }
+      &:hover {
+        width: "90%";
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
     }
   }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import "./index.scss";
 export const Card = (props) => {
   const { disabled = true, lineEnable = false, lineClassName } = props;
-  console.log(disabled);
   return (
     <button
       key={props.keyvalue}
