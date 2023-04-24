@@ -277,7 +277,7 @@ export const folders = [
     id: 2,
     title: "Vacation photos",
     img: {
-      user2: "Elon_musk.jpeg",
+      user2: "Elon_Musk.jpeg",
       user1: "person.png",
     },
   },
@@ -285,7 +285,7 @@ export const folders = [
     id: 3,
     title: "Project Report",
     img: {
-      user1: "Elon_musk.jpeg",
+      user1: "Elon_Musk.jpeg",
       user2: "person.png",
     },
   },
