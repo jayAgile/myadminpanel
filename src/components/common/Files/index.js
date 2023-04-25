@@ -36,8 +36,8 @@ export const Files = () => {
                 }}
               >
                 {/* images */}
-                <button className="img-container">
-                  <div className="imagesBg" />
+                <button className={`img-container`}>
+                  <div className={` img-${obj.img}`} />
                 </button>
                 {obj.favorite == true && (
                   <button className={`flexCenter starBtn`}>
@@ -97,7 +97,7 @@ export const Files = () => {
               }}
             >
               <button className={`img-${obj.colors}`}>
-                <div className="recent-imgStyle" />
+                <div className={`recent-imgStyle img-${obj.img}`} />
               </button>
               <span>{obj.title}</span>
             </div>

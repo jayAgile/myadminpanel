@@ -66,6 +66,7 @@
       width: 20px;
       height: 20px;
     }
+    @include colorImage($color);
   }
 
   .img-container:active {
@@ -121,10 +122,6 @@
   margin: 0px 20px 0px 0px;
   border: none;
   .recent-imgStyle {
-    @include imageUrl($image, $set-image: true, $color: white);
-    background-size: contain;
-    width: 20px;
-    height: 20px;
     margin-right: 5%;
     &:active {
       opacity: 0.5;
@@ -133,6 +130,7 @@
       cursor: pointer;
     }
   }
+  @include colorImage();
 }
 
 // main container
@@ -180,10 +178,7 @@
 
         @each $name, $value in $color-cards {
           .img-#{$name} {
-            // @include recentFileImages($img-video, $value);
-            // @each $img, $img-value in $imagesArray {
             @include recentFileImages($img-camera, $value);
-            // }
           }
         }
       }

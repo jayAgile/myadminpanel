@@ -11,6 +11,18 @@
   flex-direction: column;
 }
 
+@mixin colorImage($color: white) {
+  @each $img, $value in $imagesArray {
+    //image
+    .img-#{$img} {
+      @include imageUrl($value, $set-image: true, $color: $color);
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
 .wrapper {
   display: flex;
   .leftElements {
